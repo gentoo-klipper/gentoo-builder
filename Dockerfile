@@ -17,9 +17,9 @@ RUN --mount=type=secret,id=GITHUB_TOKEN \
     echo 'crossdev' > /var/db/repos/crossdev/profiles/repo_name && \
     echo 'masters = gentoo' > /var/db/repos/crossdev/metadata/layout.conf && \
     chown -R portage:portage /var/db/repos/crossdev && \
-    emerge -v dev-vcs/git && \
+    emerge -vq dev-vcs/git && \
     emaint sync -r gh-binhost && \
-    emerge -v app-portage/gh-binhost && \
-    emerge -v eix vim crossdev merge-usr && \
+    emerge -vq app-portage/gh-binhost && \
+    emerge -vq eix vim crossdev merge-usr dev-python/pyelftools dev-lang/swig sys-apps/dtc acct-group/users acct-group/nullmail acct-user/nullmail acct-group/cron acct-user/cron && \
     crossdev --target armv7a-hardfloat-linux-gnueabi && \
     eix-update
