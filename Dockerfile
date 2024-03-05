@@ -20,6 +20,7 @@ RUN --mount=type=secret,id=GITHUB_TOKEN \
     emerge -vq dev-vcs/git && \
     emaint sync -r gh-binhost && \
     emerge -vq app-portage/gh-binhost && \
-    emerge -vq eix vim crossdev merge-usr dev-python/pyelftools dev-lang/swig sys-apps/dtc acct-group/users acct-group/nullmail acct-user/nullmail acct-group/cron acct-user/cron && \
+	emerge -vqe dev-vcs/git app-portage/gh-binhost && \
+    emerge -vq eix vim crossdev merge-usr dev-python/pyelftools dev-lang/swig sys-apps/dtc acct-group/users acct-group/nullmail acct-user/nullmail acct-group/cron acct-user/cron dev-embedded/u-boot-tools sys-fs/genext2fs && \
     crossdev --target armv7a-hardfloat-linux-gnueabi && \
     eix-update
