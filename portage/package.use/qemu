@@ -1,0 +1,6 @@
+app-emulation/qemu QEMU_USER_TARGETS: arm
+app-emulation/qemu static-user -jpeg -oss -vnc -png
+dev-libs/glib static-libs
+sys-libs/zlib static-libs
+sys-apps/attr static-libs
+dev-libs/libpcre2 static-libs
