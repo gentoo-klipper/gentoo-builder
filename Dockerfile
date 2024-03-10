@@ -23,4 +23,5 @@ RUN --mount=type=secret,id=GITHUB_TOKEN \
 	emerge -vqe dev-vcs/git app-portage/gh-binhost && \
     emerge -vq eix vim crossdev merge-usr dev-python/pyelftools dev-lang/swig sys-apps/dtc acct-group/users acct-group/nullmail acct-user/nullmail acct-group/cron acct-user/cron dev-embedded/u-boot-tools sys-fs/genext2fs sys-apps/dtc app-text/xmlto dev-util/desktop-file-utils x11-misc/shared-mime-info app-emulation/qemu && \
     crossdev --target armv7a-hardfloat-linux-gnueabi && \
+	crossdev --lenv 'USE="nano -nls -threads -unicode" EXTRA_ECONF="--enable-newlib-hw-fp"' --genv 'USE="cxx -nls -nptl -pch -pie -ssp" EXTRA_ECONF="--with-multilib-list=rmprofile --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-shared --disable-threads --disable-tls"' -s4 --ex-gdb -t arm-none-eabi && \
     eix-update
